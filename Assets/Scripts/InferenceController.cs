@@ -13,6 +13,7 @@ public class InferenceController : MonoBehaviour
     [Header("Components")]
     [SerializeField, Tooltip("Responsible for image preprocessing")]
     private ImageProcessor imageProcessor;
+    
     [SerializeField, Tooltip("Executes PoseNet model for pose estimation")]
     private PoseNetPoseEstimator modelRunner;
     [SerializeField, Tooltip("Manages user interface updates")]

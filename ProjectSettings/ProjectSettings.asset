@@ -146,7 +146,7 @@ PlayerSettings:
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
   useHDRDisplay: 0
-  D3DHDRBitDepth: 0
+  hdrBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
@@ -587,8 +587,10 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: CJM_UNITY_MEDIA_DISPLAY;CJM_BARRACUDA_INFERENCE;CJM_HUMAN_POSE_2D_TOOLKIT
+    Android: USE_INPUT_SYSTEM_POSE_CONTROL;USE_INPUT_SYSTEM_POSE_CONTROL
+    Standalone: CJM_UNITY_MEDIA_DISPLAY;CJM_BARRACUDA_INFERENCE;CJM_HUMAN_POSE_2D_TOOLKIT;USE_INPUT_SYSTEM_POSE_CONTROL;USE_INPUT_SYSTEM_POSE_CONTROL
     WebGL: CJM_UNITY_MEDIA_DISPLAY;CJM_CV_IMAGE_GALLERY;CJM_BARRACUDA_INFERENCE;CJM_HUMAN_POSE_2D_TOOLKIT
+    Windows Store Apps: CJM_HUMAN_POSE_2D_TOOLKIT;CJM_BARRACUDA_INFERENCE;CJM_UNITY_MEDIA_DISPLAY;USE_INPUT_SYSTEM_POSE_CONTROL;USE_INPUT_SYSTEM_POSE_CONTROL
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -607,16 +609,16 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: BarracudaInferenceToolkit_Demo
-  metroPackageVersion: 
-  metroCertificatePath: 
+  metroPackageName: BarracudaInferenceToolkitDemo
+  metroPackageVersion: 1.0.0.0
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00a2259991b8da01
   metroApplicationDescription: BarracudaInferenceToolkit_Demo
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: barracuda-inference-posenet-demo
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -628,7 +630,15 @@ PlayerSettings:
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    WindowsStoreApps:
+      GazeInput: True
+      PrivateNetworkClientServer: True
+      InternetClientServer: True
+      SpatialPerception: True
+      InternetClient: True
+      WebCam: True
+      Microphone: True
   metroTargetDeviceFamilies: {}
   metroFTAName: 
   metroFTAFileTypes: []
@@ -680,7 +690,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
